@@ -34,6 +34,7 @@ export default function MovieViews() {
           )}
         </div>
         {/*<Route path="/movie/:id" element={<MovieDetails movies={movies} />} />*/}
+        <h1>PUSH INTO MASTER</h1>
       </div>
     </>
   );
