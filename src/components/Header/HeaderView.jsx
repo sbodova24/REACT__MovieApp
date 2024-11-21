@@ -1,80 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./HeaderView.css";
 import SearchBar from "./SearchBar";
+import SideBarMenu from "./SideBarMenu";
 
 export default function HeaderView() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   return (
-    <nav className="navbar navbar-expand-xl navbar-dark bg-dark">
-      <div className="container-fluid">
+    <div className="sticky-top py-3 _navigation">
+      <nav className="navbar navbar-dark bg-dark">
+        <div className="container-fluid">
 
-        {/* App Name */}
-        <div>
-          <Link to="/" className="navbar-brand fw-bold fs-3">
-            Moviq
-          </Link>
+          <div>
+            <button
+              className="navbar-toggler me-3"
+              type="button"
+              onClick={toggleSidebar}
+              aria-label="Toggle navigation"
+            >
+              <i className="bi bi-list"></i>
+            </button>
+
+            {/* App Name */}
+            <Link to="/" className="navbar-brand fw-bold fs-3">
+              Moviq
+            </Link>
+          </div>
+          <SearchBar />
+
+          <button className="btn btn-orange-transparent fs-6 rounded-0 px-4 px-3">
+            <Link to="sign-in">
+              SignIn
+            </Link>
+          </button>
+
         </div>
+      </nav>
 
-
-
-        {/* Hamburger Menu Icon */}
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i className="bi bi-list"></i>
-        </button>
-
-
-        {/* Collapsible Links and Search Bar */}
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            {/* Dropdown Menu */}
-            <li className="nav-item dropdown">
-              <button
-                className="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="navbarDropdown"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i className="bi bi-list"></i>
-              </button>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <Link to='sign-in' className="dropdown-item">
-                    Sign In
-                  </Link>
-                </li>
-                <li>
-                  <Link to='sign-up' className="dropdown-item">
-                    Sign Up
-                  </Link>
-                </li>
-                <li>
-                  <Link to='movies' className="dropdown-item">
-                    Movies
-                  </Link>
-                </li>
-                <li>
-                  <Link to='groups' className="dropdown-item">
-                    Groups
-                  </Link>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-
-      <SearchBar/>
-      
-      </div>
-    </nav>
+      {/* Sidebar Menu */}
+      <SideBarMenu isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+    </div>
   );
 }

@@ -23,5 +23,39 @@
 }
 
 
+.btn-orange-transparent {
+  background-color: transparent;
+  border: 2px solid var(--orange) !important;
+  color: #FFF !important;
+}
 
-/* Move custom Styles from Header.css HERE */
+.btn-orange-transparent a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.btn-orange {
+  background-color: var(--orange) !important; 
+  color: #fff !important;
+  border: none;
+}
+
+.btn-orange-transparent:hover {
+  background-color: var(--orange) !important;
+  color: #fff;
+}
+
+.btn-orange:hover {
+  background-color: var(--orange-hover) !important;
+  color: #fff;
+}
+
+.elem-hover:hover {
+  background-color: var(--orange);
+}
+
+
+._navigation {
+  border-bottom: 2px solid var(--gray);
+  z-index: 3000;
+}
