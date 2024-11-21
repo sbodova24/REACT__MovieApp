@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation, NavLink, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Header from './components/Header/Header';
+import HeaderView from './components/Header/HeaderView';
 import HomeView from './views/HomeView';
 import SignInView from './views/SignInView';
 import SignUpView from './views/SignUpView';
@@ -10,13 +10,12 @@ import MoviesView from './views/MoviesView';
 import GroupsView from './views/GroupsView';
 import MovieDetails from './views/MovieDetailsView/MovieDetails';
 
-
 export default function App() {
 
   return (
     <div className="App bg-dark text-white">
       <Router>
-        <Header />
+        <HeaderView />
 
         <Routes>
           <Route path="/" element={<HomeView />} />

@@ -30,11 +30,11 @@ export default function HomeView() {
     return result;
   };
 
-  const movieChunks = chunkMovies(movies, 8); // 8 movies in one carousel group (in 1 display)
+  const movieChunks = chunkMovies(movies, 4); // 4 movies in one carousel row
 
   return (
     <>
-      <h1 className="text-center my-4">Popular Movies</h1>
+      <h1 className="text-center my-5">Popular Movies</h1>
       <div className="container mt-4">
         {movies.length > 0 ? (
           <Carousel interval={null}>

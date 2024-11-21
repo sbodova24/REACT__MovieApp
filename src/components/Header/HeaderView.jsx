@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Header.css";
+import "./HeaderView.css";
+import SearchBar from "./SearchBar";
 
-export default function Header() {
+export default function HeaderView() {
 
   return (
     <nav className="navbar navbar-expand-xl navbar-dark bg-dark">
@@ -70,21 +71,9 @@ export default function Header() {
             </li>
           </ul>
         </div>
-        
-        {/* Search Bar */}
-        <div>
-          <form className="search-bar mx-auto d-flex align-items-center">
-            <input
-              className="form-control search-input"
-              type="text"
-              placeholder="Enter keywords"
-              aria-label="Search"
-            />
-            <button className="btn btn-orange search-btn" type="submit">
-              <i className="bi bi-search"></i>
-            </button>
-          </form>
-        </div>
+
+      <SearchBar/>
+      
       </div>
     </nav>
   );
