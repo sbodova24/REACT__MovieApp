@@ -13,7 +13,7 @@ export const MovieCard = ({ movie }) => {
   return (
     <div>
       <div
-        className="card bg-dark text-white h-100"
+        className="card bg-dark text-white"
         onClick={toMovieDetails}
         style={{ cursor: "pointer" }}
       >
@@ -21,7 +21,7 @@ export const MovieCard = ({ movie }) => {
           src={imageUrl}
           className="card-img-top img-fluid"
           alt={movie.title || "Movie image"}
-          style={{ height: "300px", objectFit: "cover" }}
+          style={{ height: "100%", objectFit: "cover" }}
         />
         <div className="card-body d-flex flex-column justify-content-between">
           <h5 className="card-title text-truncate">{original_title}</h5>

@@ -37,7 +37,7 @@ export default function HomeView() {
       <h1 className="text-center my-5">Popular Movies</h1>
       <div className="container mt-4">
         {movies.length > 0 ? (
-          <Carousel interval={null}>
+          <Carousel interval={5000}>
             {movieChunks.map((chunk, index) => (
               <Carousel.Item key={index}>
                 <div className="row">

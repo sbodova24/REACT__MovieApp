@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: #FFF;
   background-color: #212529;
 
   font-synthesis: none;
@@ -12,6 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --orange: #d97706;
+  --orange-hover: #c2410c;
+  --gray: #393b3f;
 }
 
 body {
